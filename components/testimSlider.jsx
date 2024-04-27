@@ -30,7 +30,7 @@ const Slider = ({clients}) => {
                     {clients.map((client, index) => (
                         <SwiperSlide key={index}>
                             {({isActive})=> (
-                                <div className='hidden md:flex p-4'>
+                                <div className='hidden md:flex p-4 cursor-pointer'>
                                     <Image
                                         src={client.avatar} width={120} height={120}
                                         alt='qwe'
@@ -43,7 +43,7 @@ const Slider = ({clients}) => {
                 </Swiper>
                 <Swiper
                     loop={true}
-                    navigation={true}
+                    navigation={{enabled:true}}
                     slidesPerView={1}
                     initialSlide={2}
                     thumbs={{
@@ -57,9 +57,8 @@ const Slider = ({clients}) => {
                 }}
                     className='mt-6'
                     breakpoints={{
-                        420:{
+                        320:{
                             pagination: {
-                                clickable:true,
                                 enabled:true
                             },
                             navigation: {
